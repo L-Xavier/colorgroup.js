@@ -46,4 +46,4 @@ GitHub address : https://github.com/chuckcarpenter/REM-unit-polyfill
 author L.Xavier
 contact l.xavier@foxmail.com
 Welcome to  suggestions and use
-Copyright (C) 2017  L.Xavier, http://hakim.se
+Copyright (C) 2017  L.Xavier
