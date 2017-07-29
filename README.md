@@ -35,9 +35,9 @@ resethtml({//Initialization, and the remaining units of length are computed as R
 
 # Instructions
 
-REM supports only ie8+
-If you want to use REM under IE8
-Please use rem.js
+REM supports only ie8+<br />
+If you want to use REM under IE8<br />
+Please use rem.js<br />
 GitHub address : https://github.com/chuckcarpenter/REM-unit-polyfill
  
 
