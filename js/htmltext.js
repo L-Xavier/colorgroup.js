@@ -31,7 +31,7 @@ function resethtml(options) {
 			}
 			return browser.versions.mobile;
     	};
-    	
+    	 
     	//浏览器是否支持zoom属性
     	var supportCss3 = function (style) { 
 			var prefix = ['webkit', 'Moz', 'ms', 'o'], 
