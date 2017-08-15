@@ -2,47 +2,36 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<title>rem自动改变字体大小 | htmltext.js</title>
+	<title>获取渐变颜色 | colorgroup.js</title>
 	<script src="https://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
- 	<script type="text/javascript" src="js/htmltext.js"></script>
+ 	<script type="text/javascript" src="js/colorgroup.js"></script>
 	<style type="text/css">
-		body {
-		  background: #233a40; 
-		  padding: 0;
-		  margin: 0;
-		}
-		h1 {
-			background: rgba(0,0,0,0.2);
-			text-align: center;
-			color:#fff;
-			font-family: "微软雅黑";
-			font-size: 2rem;
-		}
-		#rem3{
-			font-size: 3rem;
-		}
+		body {padding: 0;margin: 0;}
+		ul{list-style:none;padding: 0;margin: 0;}
+		li{width: 100%;height: 10px;}
 	</style>
 	<script>
 	$(function(){
-		resethtml({ //初始化，其余长度单位用rem，计算为1920下的宽度/32
-			mode:'auto', //模式,有auto和parts两种
-    		minfontsize:62.5,//设置最小字体百分比小，小于这个大小字体不变化。
-    		maxfontsize:200//设置最大字体百分比，大于这个大小字体不变化。
-    	});
-    	//最简初始化resethtml();默认auto模式
+		var color=getcolor(135,//rgb(130,230,130),指rgb参数中的最小值,范围0-255(整数),默认130
+		  				   230,//rgb(130,230,130),指rgb参数中的最大值,范围0-255(整数),默认230
+		 				   1//颜色渐变间隔,整数,默认5
+						   );
+
+		//返回带rgb的颜色数组
+		for(var i=0;i<color.length;i++){
+			$('.test').append("<li style='background-color:"+color[i]+";'></li>");
+		}
  	})
     </script>
 </head>
 
 <body>
 
-
-		<h1 id="rem1">resethtml for rem</h1>
-		<div style="width: 40rem; margin-left: auto; margin-right: auto; height: 20rem; background-color: #FFFFFF;"><h1 id="rem2" style="font-size: 1rem;">resethtml for rem</h1></div>
-		<h1 id="rem3">resethtml for rem</h1>
+<ul class="test">
+</ul>
 
 
 
-
+	
 </body>
 </html>
