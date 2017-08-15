@@ -16,7 +16,7 @@ JS:
 ```
  $(document).ready(function(){
     resethtml();
-});
+ });
 ```
 
 #### 可选参数:
@@ -34,7 +34,7 @@ resethtml({//初始化，其余长度单位用rem，计算为1920下的宽度/32
 ```
 
 # 额外提示
- 
+
 REM 只支持 ie8+<br />
 如果你想在IE8下使用REM<br />
 请引用 rem.js<br />
