@@ -1,10 +1,10 @@
-# resethtml
-Reset the font size of HTML for REM.
+# 重新设置HTML的css
+为REM重新设置HTML的font-size.
 
 
-# Usage
-
-#### On your web page:
+# 用法
+ 
+#### 在你的页面上:
 
 ```
 <script src="https://cdn.bootcss.com/jquery/3.2.1/core.js"></script>
@@ -19,31 +19,31 @@ JS:
 });
 ```
 
-#### Additional options:
+#### 可选参数:
 
 ```
-resethtml({//Initialization, and the remaining units of length are computed as REM by 1920, width /32
-    	  mode : 'auto',//There are two kinds of patterns, 'auto' and 'parts', and 'parts' is media adaptive query
-    	  zoom : 'on',//'Zoom' switch, 'on' or 'off'
-    	  zoomsize : '1920',//Sets the scaling ratio to zoomsize as the reference model
-          minfontsize : 62.5,//Minimum font size,Unit '%'
-          maxfontsize : 200,//Maximum font size,Unit '%'
-          winsizeparts : '360,640,1080,1366,1600',//'Parts' available, the window size is greater than 'winsizeparts[1]', then the font size is 'fontsizeparts[1]', minimum 'minfontsize', the maximum not more than 'maxfontsize'
-          fontsizeparts : '67,100,125,150,180'//'Parts' available, paired with 'winsizeparts'
+resethtml({//初始化，其余长度单位用rem，计算为1920下的宽度/32
+    	  mode : 'auto',//模式,有auto和parts两种,parts为媒体自适应查询
+    	  zoom : 'on',//zoom开关,on或off
+    	  zoomsize : '1920',//设置缩放比例,以zoomsize为参照模型
+          minfontsize : 62.5,//最小字体大小
+          maxfontsize : 200,//最大字体大小
+          winsizeparts : '360,640,1080,1366,1600',//parts下可用,窗口大小大于winsizeparts[1],则字体大小为fontsizeparts[1],最小为minfontsize,最大不超过maxfontsize
+          fontsizeparts : '67,100,125,150,180'//parts下可用,与winsizeparts搭配
 });
 ```
 
-# Instructions
-
-REM supports only ie8+<br />
-If you want to use REM under IE8<br />
-Please use rem.js<br />
-GitHub address : https://github.com/chuckcarpenter/REM-unit-polyfill<br />
+# 额外提示
+ 
+REM 只支持 ie8+<br />
+如果你想在IE8下使用REM<br />
+请引用 rem.js<br />
+GitHub 地址 : https://github.com/chuckcarpenter/REM-unit-polyfill<br />
  
 
-# License
-
-author L.Xavier<br />
-contact l.xavier@foxmail.com<br />
-Welcome to  suggestions and use<br />
+# 许可证
+ 
+作者 L.Xavier<br />
+联系 l.xavier@foxmail.com<br />
+欢迎使用和提出建议<br />
 Copyright (C) 2017  L.Xavier<br />
