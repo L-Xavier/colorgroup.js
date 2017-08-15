@@ -64,7 +64,7 @@ function resethtml(options) {
 		}
     }
     
-    //选择模式auto和parts
+    //选择模式auto和parts 
     var resize = function () {
     	
     	var w=html.width(),
