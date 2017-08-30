@@ -21,8 +21,8 @@ var color=getcolor();
 
 ```
  getcolor('130,230,130|130,230,130',1);//参数getcolor(color,space),color为rgb颜色参数,最多可以放两种颜色用'|'分隔
-									  //1.color为一种颜色,或两种颜色相同时,返回color渐变到color的颜色数组
-									  //2.color为两种颜色时,返回color1渐变到color2的颜色数组
+				       //1.color为一种颜色,或两种颜色相同时,返回color渐变到color的颜色数组
+				       //2.color为两种颜色时,返回color1渐变到color2的颜色数组
 ```
 
 
