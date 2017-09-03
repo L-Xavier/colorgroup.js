@@ -12,9 +12,10 @@
 	</style>
 	<script>
 	$(function(){
-		var color=getcolor('130,230,130',1);//参数getcolor(color,space),color为rgb颜色参数,最多可以放两种颜色用'|'分隔
-														//1.color为一种颜色,或两种颜色相同时,返回color渐变到color的颜色数组
-														//2.color为两种颜色时,返回color1渐变到color2的颜色数组
+		var color=getcolor('rgb(130,230,130)|rgb(50,64,160)',1);//参数getcolor(color,space),color为rgb颜色参数,最多可以放两种颜色用'|'分隔,space为渐变色间隔
+									//颜色参数写法'rgb(130,230,130)|rgb(50,64,160)','130,230,130|50,64,160','#82e682|#3240a0','82e682|3240a0',这四种都可以
+									//1.color为一种颜色,或两种颜色相同时,返回color渐变到color的颜色数组
+									//2.color为两种颜色时,返回color1渐变到color2的颜色数组
 		//返回带rgb的颜色数组
 		for(var i=0;i<color.length;i++){
 			$('.test').append("<li style='background-color:"+color[i]+";'></li>");
