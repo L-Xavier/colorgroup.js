@@ -1,19 +1,20 @@
 /*
  * colorgroup.js
- * version v2.1
+ * version v2.3
  * author L.Xavier 
  * Contact me through L.Xavier@qq.com
  */
 function getcolor(color,spacing) {
 	
 	//参数设置
-	color = color || '130,230,130',
-    spacing = spacing || 3;
+	color = color || 'rgb(130,230,130)',
+    spacing = parseInt(spacing) || 3;
+    spacing = (spacing < 1) ? 1 : spacing;
     var colorgroup=color.split('|'),
-    	color1=colorgroup[0].split(','),
+    	color1=colorRgb(colorgroup[0]).replace(/(?:\(|\)|rgb|RGB)*/g,"").split(","),
     	color2='';
     try{
-     	color2=colorgroup[1].split(',');
+     	color2=colorRgb(colorgroup[1]).replace(/(?:\(|\)|rgb|RGB)*/g,"").split(",");
     }
     catch (e) {
 		color2='';
@@ -27,6 +28,36 @@ function getcolor(color,spacing) {
     
      
 };
+
+function colorRgb(color){
+	var reg = /^#?([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;
+    var sColor = color.toLowerCase();
+    if(!/^(rgb|RGB)/.test(sColor) && sColor.indexOf(',')>-1){
+    	sColor='rgb('+sColor+')';
+    }
+    else if(!/^(rgb|RGB)/.test(sColor) && sColor.indexOf('#')==-1){
+    	sColor='#'+sColor;
+    }
+    
+    if(sColor && reg.test(sColor)){
+        if(sColor.length === 4){
+            var sColorNew = "#";
+                for(var i=1; i<4; i+=1){
+                    sColorNew += sColor.slice(i,i+1).concat(sColor.slice(i,i+1));        
+                }
+                sColor = sColorNew;
+        }
+        //处理六位的颜色值
+        var sColorChange = [];
+        for(var i=1; i<7; i+=2){
+            sColorChange.push(parseInt("0x"+sColor.slice(i,i+2)));        
+        }
+        return "RGB(" + sColorChange.join(",") + ")";
+    }else{
+        return sColor;        
+    }
+};
+
 
 function coloritem1(color,space) {
 	//参数调整
@@ -122,7 +153,8 @@ function coloritem2(color1,color2,space) {
 /*参数说明*/
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * 
-getcolor('130,230,130|130,230,130',1);//参数getcolor(color,space),color为rgb颜色参数,最多可以放两种颜色用'|'分隔
+getcolor('130,230,130|130,230,130',1);//参数getcolor(color,space),color为rgb颜色参数,最多可以放两种颜色用'|'分隔,space为渐变色间隔
+				      //颜色参数写法'rgb(130,230,130)|rgb(50,64,160)','130,230,130|50,64,160','#82e682|#3240a0','82e682|3240a0',这四种都可以
 				      //1.color为一种颜色,或两种颜色相同时,返回color渐变到color的颜色数组
 				      //2.color为两种颜色时,返回color1渐变到color2的颜色数组
  * 	 
